@@ -1,14 +1,14 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import Body from "./components/Body";
+import Header from "./components/Header";
 
 function App() {
-
   return (
-    <div className='text-4xl text-green-500'>
-      Namaste EveryOne let's build Netflix-Gpt
+    <div>
+      <Body />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

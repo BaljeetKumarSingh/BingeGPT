@@ -1,3 +1,10 @@
+# BingeGPT
+- Vite Scaffold
+- Configured tailwind Css
+- Header
+- Login Form
+- Sign up Form
+
 # Features
 - Login / SignUp page
     - SignIn / SignUp form
