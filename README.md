@@ -8,6 +8,8 @@
 - Sign up Form
 - Form Validation
 - useRef Hook
+- Firebase setup
+- Deploy our app to production
 
 # Features
 
@@ -17,7 +19,7 @@
 - Browser (after Authentication)
   -Header
   -Main Movie - Trailer in Background - Title and discription - Movie Suggestion
-  -MoviesList * N
+  -MoviesList \* N
 - Netflix-Gpt
   - Search Bar
   - Movie Suggestion
