@@ -15,6 +15,8 @@
 - Created Redux store with userSlice
 - Implemented sign out
 - Updated profile
+- BugFix: Sign up user display name update(fixed in previous commit)
+- BugFix: if the user is not logged in redirect it from "/browser" to login page("/") and vice-versa;
 
 # Features
 
