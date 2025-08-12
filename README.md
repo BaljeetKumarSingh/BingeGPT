@@ -17,16 +17,18 @@
 - Updated profile
 - BugFix: Sign up user display name update(fixed in previous commit)
 - BugFix: if the user is not logged in redirect it from "/browser" to login page("/") and vice-versa;
+- Unsubscribe to the onAuthStateChange callback
+- Added hardcoded values to constants file
 
 # Features
 
 - Login / SignUp page
   - SignIn / SignUp form
-    -redirect to browser
+    - redirect to browser
 - Browser (after Authentication)
-  -Header
-  -Main Movie - Trailer in Background - Title and discription - Movie Suggestion
-  -MoviesList \* N
+  - Header
+  - Main Movie - Trailer in Background - Title and discription - Movie Suggestion
+  - MoviesList \* N
 - Netflix-Gpt
   - Search Bar
   - Movie Suggestion

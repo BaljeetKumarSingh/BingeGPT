@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidSignIn, checkValidSignUp } from "../utils/validate";
 import {
@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMG } from "../utils/constants";
 
 const Login = () => {
   const [isSignIn, SetIsSignIn] = useState(true);
@@ -50,7 +51,7 @@ const Login = () => {
           })
             .then(() => {
               // Profile updated!
-              const { uid, email, displayName } = auth.currentUser;
+              const { uid, email, displayName } = auth.currentUser; // provide currently signed-in/up user
               dispatch(
                 addUser({ uid: uid, email: email, userName: displayName })
               );
@@ -88,10 +89,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_small.jpg"
-          alt="background-img"
-        />
+        <img src={BG_IMG} alt="background-img" />
       </div>
       <div className="absolute bg-black/80 w-110 m-1 text-white p-12 my-20 mx-auto left-0 right-0 rounded-sm">
         <h1 className="text-3xl font-bold mb-4">
