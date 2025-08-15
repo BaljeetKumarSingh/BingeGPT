@@ -19,6 +19,15 @@
 - BugFix: if the user is not logged in redirect it from "/browser" to login page("/") and vice-versa;
 - Unsubscribe to the onAuthStateChange callback
 - Added hardcoded values to constants file
+- Regiter trakt API & create an app & get api key
+- Get Data from trakt trending movies list API
+- Custom Hook for Trending Movies
+- Create movieSlice
+- Update Store with movies Data
+- Created Hooks to call trakt movieSummary api and Fanart movieImage api and store in movieSlice
+- Created Video title and Video background inside MainContainer
+- Embaded youtube link to run trailer
+- Created function to getTrailerKey from trailer url
 
 # Features
 

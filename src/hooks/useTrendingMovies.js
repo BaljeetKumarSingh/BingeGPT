@@ -12,7 +12,6 @@ const useTrendingMovies = () => {
       API_ACTION
     );
     const json = await data.json();
-    console.log(json);
     dispatch(addTrendingMovies(json));
   };
 

@@ -12,9 +12,6 @@ export const FANART_API_KEY = "393d2eeb80d0ab224332543993833da5";
 export const TRAKT_API_KEY =
   "71224274b5d6c898720676a822ca64f4b6b41046b50e2145e790b3a76d9072aa";
 
-export const Fanart_Latest_Movie =
-  "http://webservice.fanart.tv/v3/movies/latest?api_key=";
-
 export const API_ACTION = {
   method: "GET",
   headers: {
@@ -22,4 +19,9 @@ export const API_ACTION = {
     "trakt-api-version": 2,
     "trakt-api-key": TRAKT_API_KEY,
   },
+};
+
+export const getTrailerKey = (trailer) => {
+    const index = trailer.indexOf('=');
+    return trailer.substring(index + 1);
 };
