@@ -13,6 +13,7 @@ const VideoTitle = ({ id }) => {
    *  hover:*:inline (on hover make the all the children display-inline)
    *  hover:**:inline (for grand children)
    */
+  const watchLive = `https://vidsrc.cc/v2/embed/movie/${summary?.ids?.imdb}?autoPlay=true`;
   return (
     <div>
       <div className="pt-40 pl-20 absolute bg-gradient-to-b from-black w-screen">
@@ -24,7 +25,7 @@ const VideoTitle = ({ id }) => {
             </p>
           </div>
           <div className="block">
-            <a href={summary?.trailer} target="_blank">
+            <a href={watchLive} target="_blank">
               <button className="bg-white text-black text-lg font-medium shadow-md rounded-sm px-2 py-1 mr-3 cursor-pointer hover:opacity-80">
                 &#x2BC8; Play
               </button>

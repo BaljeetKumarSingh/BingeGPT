@@ -12,14 +12,18 @@ const MovieCard = ({ id }) => {
     : image?.moviethumb
     ? image?.moviethumb?.[0]?.url
     : image?.hdmovielogo?.[0]?.url;
+
+  const watchLive = `https://vidsrc.cc/v2/embed/movie/${id}?autoPlay=true`;
   return (
     url && (
       <div className="flex-none flex items-center justify-center h-70">
-        <img
-          className="w-40 h-50 rounded-md transition-all duration-500 hover:h-70 hover:w-60"
-          src={url}
-          alt={image?.name}
-        />
+        <a href={watchLive} target="_blank" rel="noopener noreferrer">
+          <img
+            className="w-40 h-50 rounded-md transition-all duration-500 hover:h-70 hover:w-60"
+            src={url}
+            alt={image?.name}
+          />
+        </a>
       </div>
     )
   );
