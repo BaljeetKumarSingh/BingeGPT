@@ -31,6 +31,10 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
+  /**
+   * bg-gradient-to-b from-black -> gives a gradient of black (from-black) from top to bottom8
+   */
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -43,7 +47,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="absolute w-screen bg-gradient-to-b from-black px-8, py-2 z-10 flex justify-between">
+      <div className="absolute z-10 w-screen bg-gradient-to-b from-black px-8, py-2 flex justify-between">
         <img className="w-44" src={LOGO} alt="logo" />
         {userName && (
           <div className="flex p-2 gap-2 mr-4">

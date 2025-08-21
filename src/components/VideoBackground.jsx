@@ -4,7 +4,6 @@ import { getTrailerKey } from "../utils/constants";
 const VideoBackground = ({ id }) => {
   const summary = useSelector((store) => store?.movies?.movieSummary);
   if (!summary) return;
-  console.log(summary);
   const trailerKey = getTrailerKey(summary?.trailer);
   /**
    * Youtube controls:
@@ -13,12 +12,14 @@ const VideoBackground = ({ id }) => {
    * rel=0 → only shows related videos from the same channel
    * modestbranding=1 → hides YouTube logo from the control bar (minimizes branding)
    * showinfo=0 → hides title & uploader info (deprecated, but still works partly in some embeds)
+   * 
+   * aspect-video -> aspect-ratio: 16 / 9
    */
 
   return (
     <div className="w-screen">
       <iframe
-        className="w-screen h-screen"
+        className="w-screen aspect-video"
         src={
           "https://www.youtube.com/embed/" +
           trailerKey +

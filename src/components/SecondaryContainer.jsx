@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import MovieList from "./MovieList";
+import { useSelector } from "react-redux";
 
 const SecondaryContainer = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const trendingMovies = useSelector((store) => store.movies?.trendingMovies);
+  if (!trendingMovies) return; // early return
+  
 
-export default SecondaryContainer
+  return (
+    <div className="absolute top-145">
+      <MovieList movies={trendingMovies} />
+    </div>
+  );
+};
+
+export default SecondaryContainer;
