@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const useMovieImage = (id) => {
   const [imageData, setImageData] = useState(null);
-  const getMovieImage = async (id) => {
+  const getMovieImages = async (id) => {
     const data = await fetch(
       `http://webservice.fanart.tv/v3/movies/${id}?api_key=${FANART_API_KEY}`
     );
@@ -11,7 +11,7 @@ const useMovieImage = (id) => {
     setImageData(json);
   };
   useEffect(() => {
-    getMovieImage(id);
+    getMovieImages(id);
   }, []);
 
   return imageData;

@@ -7,7 +7,6 @@ const VideoTitle = ({ id }) => {
   const image = useMovieImage(id);
   const summary = useSelector((store) => store?.movies?.movieSummary);
   if (!image && !summary) return;
-  console.log(image);
   /**
    * Hover image animation
    *  class="transition-all duration-1000 pt-30 hover:pt-0" (Here, it starts with pt-30 and shrinks to pt-0 on hover and translation will be smoother)
@@ -16,7 +15,7 @@ const VideoTitle = ({ id }) => {
    */
   return (
     <div>
-      <div className="pt-50 pl-30 absolute bg-gradient-to-b from-black w-screen">
+      <div className="pt-40 pl-20 absolute bg-gradient-to-b from-black w-screen">
         <div className="flex flex-col gap-1 justify-center items-center w-md min-h-md pt-30 pb-15 transition-all duration-1000 hover:pt-0  hover:**:inline">
           <div className="mb-4">
             <img src={image?.hdmovielogo[0]?.url} alt="Movie Background" />
