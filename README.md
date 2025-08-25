@@ -28,6 +28,7 @@
 - Created Video title and Video background inside MainContainer
 - Embaded youtube link to run trailer
 - Created function to getTrailerKey from trailer url
+- Till now had created secondary container that contains MovieList and MovieCard
 
 # Features
 
