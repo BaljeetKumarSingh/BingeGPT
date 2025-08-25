@@ -5,11 +5,11 @@ const SecondaryContainer = () => {
   const trendingMovies = useSelector((store) => store.movies?.trendingMovies);
   const popularMovies = useSelector((store) => store.movies?.popularMovies);
   const boxOfficeMovies = useSelector((store) => store.movies?.boxOfficeMovies);
-  const anticipatedMovies = useSelector((store) => store.movies?.anticipatedMovies);
+  const popularShows = useSelector((store) => store.movies?.popularShows);
   if (!trendingMovies) return;
   if (!popularMovies) return;
   if(!boxOfficeMovies) return;
-  if(!anticipatedMovies) return;
+  if(!popularShows) return;
 
   return (
     <div>
@@ -18,7 +18,7 @@ const SecondaryContainer = () => {
       </div>
       <MovieList movies={popularMovies} heading="Popular Movies" />
       <MovieList movies={boxOfficeMovies} heading="Box Office Hit Movies"/>
-      <MovieList movies={anticipatedMovies} heading="Most Anticipated Movies"/>
+      <MovieList movies={popularShows} heading="Most Popular Shows"/>
     </div>
   );
 };

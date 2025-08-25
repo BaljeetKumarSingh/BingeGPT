@@ -1,6 +1,6 @@
-import useAnticipatedMovies from "../hooks/useAnticipatedMovies";
 import useBoxOfficeMovies from "../hooks/useBoxOfficeMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
+import usePopularShows from "../hooks/usePopularShows";
 import useTrendingMovies from "../hooks/useTrendingMovies";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
@@ -10,7 +10,7 @@ const Browse = () => {
   useTrendingMovies();
   usePopularMovies();
   useBoxOfficeMovies();
-  useAnticipatedMovies();
+  usePopularShows();
   return (
     <div>
       <Header />
