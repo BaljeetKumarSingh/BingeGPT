@@ -14,6 +14,8 @@ const VideoBackground = ({ id }) => {
    * showinfo=0 → hides title & uploader info (deprecated, but still works partly in some embeds)
    * 
    * aspect-video -> aspect-ratio: 16 / 9
+   * loop=1 -> To enable looping
+   * playlist=trailerKey -> must also include the playlist parameter with the same video ID as the video you want to loop. This is necessary for the loop feature to work correctly.
    */
 
   return (
@@ -23,7 +25,7 @@ const VideoBackground = ({ id }) => {
         src={
           "https://www.youtube.com/embed/" +
           trailerKey +
-          "?autoplay=1&mute=1&rel=0&modestbranding=1&showinfo=0&control=0"
+          "?loop=1&playlist="+ trailerKey +"&autoplay=1&mute=1&rel=0&modestbranding=1&showinfo=0&control=0"
         }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

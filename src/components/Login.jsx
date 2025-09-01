@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import Header from "./Header";
 import { checkValidSignIn, checkValidSignUp } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
@@ -87,7 +86,6 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
       <div className="absolute">
         <img src={BG_IMG} alt="background-img" />
       </div>

@@ -28,6 +28,12 @@
 - Created Video title and Video background inside MainContainer
 - Embaded youtube link to run trailer
 - Created function to getTrailerKey from trailer url
+- Optimise moviesSlice access in SecondaryContainer
+- Added MostWatchedMovies hook in place of Anticipated Movies hook
+- Enable looping in VideoBackground
+- Added Search button in Header
+- Added SearchGpt Component along with GptSearchBar and GptSuggestion 
+
 
 # Features
 

@@ -7,10 +7,9 @@ export const USER_AVATAR =
 export const BG_IMG =
   "https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_small.jpg";
 
-export const FANART_API_KEY = "393d2eeb80d0ab224332543993833da5";
+export const FANART_API_KEY = import.meta.env.VITE_FANART_API_KEY;
 
-export const TRAKT_API_KEY =
-  "71224274b5d6c898720676a822ca64f4b6b41046b50e2145e790b3a76d9072aa";
+export const TRAKT_API_KEY = import.meta.env.VITE_TRAKT_API_KEY;
 
 export const API_ACTION = {
   method: "GET",

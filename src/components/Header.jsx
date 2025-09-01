@@ -1,11 +1,13 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
-import { LOGO, USER_AVATAR } from "../utils/constants";
+import { USER_AVATAR } from "../utils/constants";
 import logo from "../assets/logo.png";
+import search from "../assets/search.png";
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -49,9 +51,15 @@ const Header = () => {
   return (
     <div>
       <div className="absolute z-10 w-screen bg-gradient-to-b from-black px-8, py-1 flex justify-between">
-        <img className="w-50" src={logo} alt="logo" />
+        <img className="w-50 cursor-pointer" src={logo} alt="logo" onClick={() => navigate("/browse")}/>
         {userName && (
           <div className="flex p-2 gap-2 mr-4">
+            <Link to={"/search"}>
+              <div className="flex cursor-pointer">
+                <img className="w-8 h-8 mt-0.5" src={search} alt="Search" />
+                <p className="text-white mt-1.5 mx-1">Search</p>
+              </div>
+            </Link>
             <div className="flex gap-1">
               <img className="w-10 h-10" src={USER_AVATAR} alt="userLogo" />
               <div className="flex items-center h-10">

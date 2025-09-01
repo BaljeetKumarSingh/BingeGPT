@@ -2,24 +2,18 @@ import MovieList from "./MovieList";
 import { useSelector } from "react-redux";
 
 const SecondaryContainer = () => {
-  const trendingMovies = useSelector((store) => store.movies?.trendingMovies);
-  const popularMovies = useSelector((store) => store.movies?.popularMovies);
-  const boxOfficeMovies = useSelector((store) => store.movies?.boxOfficeMovies);
-  const anticipatedMovies = useSelector((store) => store.movies?.anticipatedMovies);
-  if (!trendingMovies) return;
-  if (!popularMovies) return;
-  if(!boxOfficeMovies) return;
-  if(!anticipatedMovies) return;
-
+  const movies = useSelector((store) => store.movies);
   return (
-    <div>
-      <div className="absolute top-145">
-        <MovieList movies={trendingMovies} heading="Trending Movies" />
+    movies && (
+      <div className="bg-black text-white">
+        <div className="-mt-65 pl-4">
+          <MovieList movies={movies?.trendingMovies} heading="Trending Movies" />
+          <MovieList movies={movies?.popularMovies} heading="Popular Movies" />
+          <MovieList movies={movies?.boxOfficeMovies} heading="Box Office Hit Movies" />
+          <MovieList movies={movies?.mostWatchedMovies} heading="Most Watched Movies" />
+        </div>
       </div>
-      <MovieList movies={popularMovies} heading="Popular Movies" />
-      <MovieList movies={boxOfficeMovies} heading="Box Office Hit Movies"/>
-      <MovieList movies={anticipatedMovies} heading="Most Anticipated Movies"/>
-    </div>
+    )
   );
 };
 

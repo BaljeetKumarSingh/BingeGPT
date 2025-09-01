@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyARtHMLxu66Raj7NnfX51ncoUoQBs-Ijy4",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "bingegpt-c2b35.firebaseapp.com",
   projectId: "bingegpt-c2b35",
   storageBucket: "bingegpt-c2b35.firebasestorage.app",

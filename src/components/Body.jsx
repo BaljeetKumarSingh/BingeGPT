@@ -1,21 +1,42 @@
 import Login from "./Login";
 import Browse from "./Browse";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Header from "./Header";
+import GptSearch from "./GptSearch";
+
+const appLayout = () => {
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  )
+}
 
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
       path: "/",
-      Component: Login, // element: <Login />
-    },
-    {
-      path: "/browse",
-      Component: Browse,
+      Component: appLayout,
+      children: [
+        {
+          path: "/",
+          Component: Login,
+        },
+        {
+          path: "/browse",
+          Component: Browse,
+        },
+        {
+          path: "/search",
+          Component: GptSearch,
+        },
+     ],
     },
   ]);
 
   return (
-    <div className="bg-black text-white">
+    <div>
       <RouterProvider router={appRouter} />
     </div>
   );
