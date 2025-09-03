@@ -3,15 +3,15 @@ import { auth } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { USER_AVATAR } from "../utils/constants";
 import logo from "../assets/logo.png";
 import search from "../assets/search.png";
 
-
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isSignIn, SetIsSignIn] = useState(false);
 
   // subscribing to the redux store
   const userName = useSelector((store) => store?.user?.userName);
@@ -23,10 +23,12 @@ const Header = () => {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, userName: displayName }));
         navigate("/browse");
+        SetIsSignIn(true);
       } else {
         // User is signed out
         dispatch(removeUser());
         navigate("/");
+        SetIsSignIn(false);
       }
     });
 
@@ -51,7 +53,12 @@ const Header = () => {
   return (
     <div>
       <div className="absolute z-10 w-screen bg-gradient-to-b from-black px-8, py-1 flex justify-between">
-        <img className="w-50 cursor-pointer" src={logo} alt="logo" onClick={() => navigate("/browse")}/>
+        <img
+          className="w-50 cursor-pointer"
+          src={logo}
+          alt="logo"
+          onClick={() => (isSignIn ? navigate("/browse") : navigate("/"))}
+        />
         {userName && (
           <div className="flex p-2 gap-2 mr-4">
             <Link to={"/search"}>

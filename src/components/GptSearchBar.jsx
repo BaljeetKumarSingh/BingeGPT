@@ -3,7 +3,7 @@ const GptSearchBar = () => {
   return (
     <div className="flex justify-center flex-col items-center gap-4 bg-blend-screen bg-gradient-to-b from-purple-500 mb-10">
       <div className="flex justify-center flex-col items-center gap-2 mt-40">
-        <h1 className="text-5xl">Let AI be your Movie Guru!</h1>
+        <h1 className="text-5xl font-bold">Let AI be your Movie Guru!</h1>
         <h2 className="text-xl">
           Discover Family-Friendly Flicks for a Perfect Movie Night
         </h2>

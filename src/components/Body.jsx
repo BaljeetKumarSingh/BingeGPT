@@ -3,6 +3,7 @@ import Browse from "./Browse";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./Header";
 import GptSearch from "./GptSearch";
+import Home from "./Home";
 
 const appLayout = () => {
   return (
@@ -21,6 +22,10 @@ const Body = () => {
       children: [
         {
           path: "/",
+          Component: Home,
+        },
+        {
+          path: "/login",
           Component: Login,
         },
         {
