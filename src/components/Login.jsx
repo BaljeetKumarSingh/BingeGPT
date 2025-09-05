@@ -6,14 +6,16 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { BG_IMG } from "../utils/constants";
+import lang from "../utils/lang";
 
 const Login = () => {
   const [isSignIn, SetIsSignIn] = useState(true);
   const [errorMessage, SetErrorMessage] = useState(null);
   const dispatch = useDispatch();
+  const langKey = useSelector(store => store.config.lang);
 
   const name = useRef(null);
   const email = useRef(null);
@@ -92,7 +94,7 @@ const Login = () => {
       <div className="absolute w-screen h-screen bg-black/50">
         <div className="absolute bg-black/70 w-110 m-1 text-white p-12 my-20 mx-auto left-0 right-0 rounded-sm">
           <h1 className="text-3xl font-bold mb-4">
-            {isSignIn ? "Sign In" : "Sign Up"}
+            {isSignIn ? (lang[langKey].signIn) : (lang[langKey].signUp)} 
           </h1>
           <div className="">
             <form
@@ -103,7 +105,7 @@ const Login = () => {
                 <input
                   ref={name}
                   type="text"
-                  placeholder="Full Name"
+                  placeholder={lang[langKey].fullName}
                   className="p-3 m-2 border-1 border-gray-500 rounded-sm placeholder:text-gray-300 bg-black/40"
                 />
               )}
@@ -112,7 +114,7 @@ const Login = () => {
                   ref={email}
                   type="text"
                   defaultValue="test@demo.com"
-                  placeholder="Email or mobile number"
+                  placeholder={lang[langKey].emailOrMobile}
                   className="p-3 m-2 border-1 border-gray-500 rounded-sm placeholder:text-gray-300 bg-black/40"
                 />
               )}
@@ -121,7 +123,7 @@ const Login = () => {
                   ref={password}
                   type="password"
                   defaultValue="Test@123"
-                  placeholder="Password"
+                  placeholder={lang[langKey].password}
                   className="p-3 m-2 border-1 border-gray-500 rounded-sm placeholder:text-gray-300  bg-black/40"
                 />
               )}
@@ -129,7 +131,7 @@ const Login = () => {
                 <input
                   ref={email}
                   type="text"
-                  placeholder="Email or mobile number"
+                  placeholder={lang[langKey].emailOrMobile}
                   className="p-3 m-2 border-1 border-gray-500 rounded-sm placeholder:text-gray-300 bg-black/40"
                 />
               )}
@@ -137,7 +139,7 @@ const Login = () => {
                 <input
                   ref={password}
                   type="password"
-                  placeholder="Password"
+                  placeholder={lang[langKey].password}
                   className="p-3 m-2 border-1 border-gray-500 rounded-sm placeholder:text-gray-300  bg-black/40"
                 />
               )}
@@ -146,11 +148,11 @@ const Login = () => {
                 className="p-2 m-2 rounded-sm bg-red-700 font-bold cursor-pointer"
                 onClick={handleButtonClick}
               >
-                {isSignIn ? "Sign In" : "Sign Up"}
+                {isSignIn ? (lang[langKey].signIn) : (lang[langKey].signUp)}
               </button>
               {isSignIn && (
                 <span className="text-center underline cursor-pointer">
-                  Forgot password?
+                  {lang[langKey].forgotPassword}
                 </span>
               )}
             </form>
@@ -165,22 +167,21 @@ const Login = () => {
                   id="Remember me"
                 />
                 <label className="px-2" htmlFor="Remember me">
-                  Remember me
+                  {lang[langKey].rememberMe}
                 </label>
               </div>
             )}
             <h1 className="text-gray-400 my-4">
-              {isSignIn ? "New to Netflix? " : "Already Registered? "}
+              {isSignIn ? (lang[langKey].newToNetflix) : (lang[langKey].alreadyRegistered)}
               <span
                 className="text-white font-bold cursor-pointer"
                 onClick={toogleSignInSignUp}
               >
-                {isSignIn ? "Sign up now." : "Sign in now"}
+                {isSignIn ? (lang[langKey].signInNow) : (lang[langKey].signUpNow)}
               </span>
             </h1>
             <p className="text-gray-400">
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot.
+              {lang[langKey].captcha}
             </p>
           </div>
         </div>

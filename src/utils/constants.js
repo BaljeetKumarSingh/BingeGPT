@@ -24,3 +24,12 @@ export const getTrailerKey = (trailer) => {
     const index = trailer.indexOf('=');
     return trailer.substring(index + 1);
 };
+
+export const SUPPORTED_LANGUAGES = [
+  {identifier: "en", name: "English"},
+  {identifier: "hi", name: "हिंदी"},
+  {identifier: "es", name: "Spanish"},
+  {identifier: "fr", name: "French"},
+  {identifier: "de", name: "German"},
+  {identifier: "ja", name: "Japanese"},
+];

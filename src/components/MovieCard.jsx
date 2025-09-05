@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import useMovieImage from "../hooks/useMovieImage";
 
 const MovieCard = ({ id }) => {
