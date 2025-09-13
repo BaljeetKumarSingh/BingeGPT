@@ -18,7 +18,7 @@ const Header = () => {
 
   // subscribing to the redux store
   const userName = useSelector((store) => store?.user?.userName);
-  const langKey = useSelector(store => store.config.lang);
+  const langKey = useSelector((store) => store.config.lang);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -56,20 +56,23 @@ const Header = () => {
   };
   const handleLangChange = (e) => {
     dispatch(changeLanguage(e.target.value));
-  }
+  };
   return (
     <div>
-      <div className="absolute z-10 w-screen bg-gradient-to-b from-black px-8, py-1 flex justify-between">
+      <div className="absolute z-10 w-screen bg-gradient-to-b from-black px-8, py-1 flex justify-between text-xs md:text-sm lg:text-base">
         <img
-          className="w-50 cursor-pointer"
+          className="w-25 h-1/2 sm:w-32 lg:w-40 xl:w-48 cursor-pointer"
           src={logo}
           alt="logo"
           onClick={() => (isSignIn ? navigate("/browse") : navigate("/"))}
         />
-        <div className="flex p-2 gap-2 mr-2">
-          <div className="flex items-center  h-12">
+        <div className="flex p-2 sm:gap-2 sm:mr-2">
+          <div className="flex items-center xl:mt-2 h-6 sm:h-8 lg:h-10">
             <img className="w-5 h-5" src={translate} alt="Language logo" />
-            <select className="border-none outline-none text-white h-12 cursor-pointer" onClick={handleLangChange} >
+            <select
+              className="border-none outline-none text-white cursor-pointer"
+              onClick={handleLangChange}
+            >
               {SUPPORTED_LANGUAGES.map((language) => (
                 <option className="text-black" value={language.identifier}>
                   {language.name}
@@ -78,21 +81,31 @@ const Header = () => {
             </select>
           </div>
           {userName && (
-            <div className="flex p-2 gap-2 mr-4">
+            <div className="flex xl:p-2 gap-2 sm:gap-2 mr-4">
               <Link to={"/search"}>
                 <div className="flex cursor-pointer">
-                  <img className="w-8 h-8 mt-0.5" src={search} alt="Search" />
-                  <p className="text-white mt-1.5 mx-1">{lang[langKey].search}</p>
+                  <img
+                    className="ml-1 sm:ml-0 w-5 h-5 mt-0.5 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                    src={search}
+                    alt="Search"
+                  />
+                  <p className="text-white mt-1.5 mx-1 hidden sm:inline">
+                    {lang[langKey].search}
+                  </p>
                 </div>
               </Link>
               <div className="flex gap-1">
-                <img className="w-10 h-10" src={USER_AVATAR} alt="userLogo" />
-                <div className="flex items-center h-10">
-                  <p className="font-bold text-gray-300">{userName}</p>
+                <img
+                  className="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10"
+                  src={USER_AVATAR}
+                  alt="userLogo"
+                />
+                <div className="flex items-center h-7 md:h-8 lg:h-10">
+                  <p className="font-bold text-gray-300 text-wrap">{userName}</p>
                 </div>
               </div>
               <button
-                className="h-10 p-2 rounded-sm bg-red-600 text-white font-bold"
+                className="h-7 md:h-8 lg:h-10 lg:py-2 px-2 rounded-sm bg-red-600 text-white font-bold "
                 onClick={handleSignOut}
               >
                 {lang[langKey].signOut}

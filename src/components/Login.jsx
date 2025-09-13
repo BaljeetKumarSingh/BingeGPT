@@ -91,9 +91,9 @@ const Login = () => {
       <div className="absolute">
         <img className="w-screen h-screen" src={BG_IMG} alt="background-img" />
       </div>
-      <div className="absolute w-screen h-screen bg-black/50">
-        <div className="absolute bg-black/70 w-110 m-1 text-white p-12 my-20 mx-auto left-0 right-0 rounded-sm">
-          <h1 className="text-3xl font-bold mb-4">
+      <div className="absolute w-screen h-screen bg-black/50 text-xs md:text-sm lg:text-base">
+        <div className="absolute bg-black/70 text-white w-xs sm:w-md p-12 my-20 mx-auto left-0 right-0 rounded-sm">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">
             {isSignIn ? (lang[langKey].signIn) : (lang[langKey].signUp)} 
           </h1>
           <div className="">

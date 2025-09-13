@@ -38,19 +38,19 @@ const GptSearchBar = () => {
   return (
     <div>
       <div className="flex justify-center flex-col items-center gap-4 bg-blend-screen bg-gradient-to-b from-purple-500 mb-10">
-        <div className="flex justify-center flex-col items-center gap-2 mt-40">
+        <div className="text-center flex justify-center flex-col items-center gap-2 mt-40">
           <h1 className="text-5xl font-bold">{lang[langKey].searchTitle}</h1>
           <h2 className="text-xl">{lang[langKey].searchSubTitle}</h2>
         </div>
-        <div className="w-full">
+        <div className="p-2 sm:p-0 w-full">
           <form
             className="flex justify-center items-center gap-2"
             onSubmit={(e) => e.preventDefault()}
           >
-            <img className="absolute left-1/16 w-8 " src={search} alt="" />
+            <img className="absolute left-1/25 md:left-1/24 lg:left-1/19 xl:left-1/16 w-6 md:w-8 " src={search} alt="" />
             <input
               ref={searchText}
-              className="bg-gray-400 py-4.5 rounded-md px-12 w-10/12 text-lg"
+              className="bg-white/30 py-4.5 rounded-md px-12 w-10/12 text-lg  text-white sm:font-bold"
               type="text"
               placeholder={lang[langKey].searchPlaceholder}
             />
@@ -63,7 +63,7 @@ const GptSearchBar = () => {
           </form>
         </div>
       </div>
-      <div className="font-bold text-xl p-1">{searchedText}</div>
+      <div className="font-bold text-xl ml-4 md:ml-6">{searchedText}</div>
     </div>
   );
 };

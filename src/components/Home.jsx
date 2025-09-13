@@ -15,9 +15,9 @@ const Home = () => {
       </div>
       <div className="absolute flex items-center justify-center w-screen h-screen bg-black/70">
         <div className="flex items-center justify-center flex-col text-white">
-          <h1 className="text-6xl font-bold">{lang[langKey].unlimitedMoviesTV}</h1>
-          <h1 className="text-6xl font-bold mb-4">{lang[langKey].showsAndMore}</h1>
-          <h2 className="mb-8 font-medium text-xl">{lang[langKey].startsAt}</h2>
+          <h1 className="text-6xl text-center font-bold">{lang[langKey].unlimitedMoviesTV}</h1>
+          <h1 className="text-6xl font-bold text-center mb-4">{lang[langKey].showsAndMore}</h1>
+          <h2 className="mb-8 font-medium  text-xl">{lang[langKey].startsAt}</h2>
           <button
             className="bg-red-700 py-3 px-6 rounded-md cursor-pointer font-bold text-2xl"
             onClick={() => navigate("/login")}
