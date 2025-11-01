@@ -177,7 +177,7 @@ const Login = () => {
                 className="text-white font-bold cursor-pointer"
                 onClick={toogleSignInSignUp}
               >
-                {isSignIn ? (lang[langKey].signInNow) : (lang[langKey].signUpNow)}
+                {isSignIn ? (lang[langKey].signUpNow) : (lang[langKey].signInNow)}
               </span>
             </h1>
             <p className="text-gray-400">
