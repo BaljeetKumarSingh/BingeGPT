@@ -70,11 +70,11 @@ const Header = () => {
           <div className="flex items-center xl:mt-2 h-6 sm:h-8 lg:h-10">
             <img className="w-5 h-5" src={translate} alt="Language logo" />
             <select
-              className="border-none outline-none text-white cursor-pointer"
+              className="border-none outline-none text-white cursor-pointer appearance-none sm:appearance-auto"
               onClick={handleLangChange}
             >
               {SUPPORTED_LANGUAGES.map((language) => (
-                <option className="text-black" value={language.identifier}>
+                <option className="text-black" key={language.identifier} value={language.identifier}>
                   {language.name}
                 </option>
               ))}
