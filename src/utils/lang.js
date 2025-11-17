@@ -22,6 +22,7 @@ const lang = {
     popularMovies: "Popular Movies",
     boxOfficeHitMovies: "Box Office Hit Movies",
     mostWatchedMovies: "Most Watched Movies",
+    mostAnticipatedMovies: "Most Anticipated Movies",
     searchTitle: "Let AI be your Movie Guru!",
     searchSubTitle: "Discover Family-Friendly Flicks for a Perfect Movie Night",
     searchPlaceholder: "What would you like to watch today?",
@@ -49,6 +50,7 @@ const lang = {
     popularMovies: "लोकप्रिय फ़िल्में",
     boxOfficeHitMovies: "बॉक्स ऑफिस हिट फ़िल्में",
     mostWatchedMovies: "सबसे ज्यादा देखी गई फ़िल्में",
+    mostAnticipatedMovies: "सबसे अपेक्षित फ़िल्में", 
     searchTitle: "एआई को अपना मूवी गुरु बनने दें!",
     searchSubTitle: "एक परफेक्ट मूवी नाइट के लिए परिवार-हितैषी फ़िल्में खोजें",
     searchPlaceholder: "आज आप क्या देखना चाहेंगे?",
@@ -76,6 +78,7 @@ const lang = {
     popularMovies: "Películas populares",
     boxOfficeHitMovies: "Éxitos de taquilla",
     mostWatchedMovies: "Películas más vistas",
+    mostAnticipatedMovies: "Películas más esperadas",
     searchTitle: "¡Deja que la IA sea tu gurú del cine!",
     searchSubTitle: "Descubre películas familiares para una noche de cine perfecta",
     searchPlaceholder: "¿Qué te gustaría ver hoy?",
@@ -103,6 +106,7 @@ const lang = {
     popularMovies: "Films populaires",
     boxOfficeHitMovies: "Succès du box-office",
     mostWatchedMovies: "Films les plus regardés",
+    mostAnticipatedMovies: "Films les plus attendus",
     searchTitle: "Laissez l’IA être votre guide cinéma !",
     searchSubTitle: "Découvrez des films familiaux pour une soirée parfaite",
     searchPlaceholder: "Que voulez-vous regarder aujourd’hui ?"
@@ -130,6 +134,7 @@ const lang = {
     popularMovies: "Beliebte Filme",
     boxOfficeHitMovies: "Kassenschlager",
     mostWatchedMovies: "Meistgesehene Filme",
+    mostAnticipatedMovies: "Am meisten erwartete Filme",
     searchTitle: "Lass die KI dein Film-Guru sein!",
     searchSubTitle: "Entdecken Sie familienfreundliche Filme für einen perfekten Filmabend",
     searchPlaceholder: "Was möchten Sie heute anschauen?"
@@ -157,6 +162,7 @@ const lang = {
     popularMovies: "人気映画",
     boxOfficeHitMovies: "大ヒット映画",
     mostWatchedMovies: "最も視聴された映画",
+    mostAnticipatedMovies: "最も期待される映画",
     searchTitle: "AIをあなたの映画ガイドにしましょう！",
     searchSubTitle: "家族みんなで楽しめる完璧な映画ナイトを見つけよう",
     searchPlaceholder: "今日は何を観たいですか？"

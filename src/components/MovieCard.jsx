@@ -1,16 +1,22 @@
 import React from "react";
 import useMovieImage from "../hooks/useMovieImage";
 
-const MovieCard = ({ id }) => {
-  const image = useMovieImage(id);
-  if (!image) return;
-  const url = image?.movieposter
-    ? image?.movieposter?.[0]?.url
-    : image?.moviesquare
-    ? image?.moviesquare?.[0]?.url
-    : image?.moviethumb
-    ? image?.moviethumb?.[0]?.url
-    : image?.hdmovielogo?.[0]?.url;
+const MovieCard = ({ id, posterUrl }) => {
+  let url;
+  let image;
+  if (!posterUrl) {
+    image = useMovieImage(id);
+    if (!image) return;
+    url = image?.movieposter
+      ? image?.movieposter?.[0]?.url
+      : image?.moviesquare
+      ? image?.moviesquare?.[0]?.url
+      : image?.moviethumb
+      ? image?.moviethumb?.[0]?.url
+      : image?.hdmovielogo?.[0]?.url;
+  } else {
+    url = "https://" + posterUrl;
+  }
 
   const watchLive = `https://vidsrc.cc/v2/embed/movie/${id}?autoPlay=true`;
   return (

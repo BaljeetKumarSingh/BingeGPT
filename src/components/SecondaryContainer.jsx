@@ -12,7 +12,7 @@ const SecondaryContainer = () => {
           <MovieList movies={movies?.trendingMovies} heading={lang[langKey].trendingMovies} />
           <MovieList movies={movies?.popularMovies} heading={lang[langKey].popularMovies} />
           <MovieList movies={movies?.boxOfficeMovies} heading={lang[langKey].boxOfficeHitMovies} />
-          <MovieList movies={movies?.mostWatchedMovies} heading={lang[langKey].mostWatchedMovies} />
+          <MovieList movies={movies?.mostAnticipatedMovies} heading={lang[langKey].mostAnticipatedMovies} />
         </div>
       </div>
     )

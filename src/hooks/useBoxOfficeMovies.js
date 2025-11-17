@@ -8,10 +8,7 @@ const useBoxOfficeMovies = () => {
   const dispatch = useDispatch();
   const boxOfficeMovies = useSelector((store) => store.movies.boxOfficeMovies);
   const getBoxOfficeMovies = async () => {
-    const data = await fetch(
-      "https://api.trakt.tv/movies/boxoffice",
-      API_ACTION
-    );
+    const data = await fetch("https://api.trakt.tv/movies/played", API_ACTION);
     const json = await data.json();
     dispatch(addBoxOfficeMovies(json));
   };

@@ -8,7 +8,8 @@ const MovieList = ({ movies, heading }) => {
         {movies?.map((movie) => (
           <MovieCard
             key={movie?.movie ? movie?.movie?.ids?.tmdb : movie?.ids?.tmdb}
-            id={movie?.movie ? movie?.movie?.ids?.tmdb : movie?.ids?.tmdb}
+            id={movie?.movie ? movie?.movie?.ids?.imdb : movie?.ids?.imdb}
+            posterUrl={movie?.movie ? movie?.movie?.images?.poster[0] : null}
           />
         ))}
       </div>
