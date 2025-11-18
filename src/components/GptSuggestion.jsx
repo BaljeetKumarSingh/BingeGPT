@@ -7,9 +7,17 @@ const GptSuggestion = () => {
     <div className="h-screen">
       {/* <div className="font-bold text-xl p-1">Search Result</div> */}
       <div className="flex mx-4 md:mx-6 my-2 gap-1 overflow-x-auto scrollbar-hide space-x-2 shrink-0">
-        {searchResult?.map((movie) => (
-          <MovieCard key={movie.trim()} id={movie.trim()} />
-        ))}
+        {searchResult?.map((movie) =>
+          typeof movie === "string" ? (
+            <MovieCard key={movie.trim()} id={movie.trim()} />
+          ) : (
+            <MovieCard
+              key={movie.id}
+              id={movie.id}
+              posterUrl={movie.posterUrl}
+            />
+          )
+        )}
       </div>
     </div>
   );

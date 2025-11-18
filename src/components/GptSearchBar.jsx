@@ -43,11 +43,15 @@ const GptSearchBar = () => {
       API_ACTION
     );
     const json = await movieData.json();
-    const res = json.map((movie) =>
+    const ids = json.map((movie) =>
       movie?.movie?.ids?.imdb
         ? movie?.movie?.ids?.imdb.toString()
         : movie?.movie?.ids?.tmdb.toString()
     );
+    const posterUrls = json.map((movie) => movie?.movie?.images.poster[0]);
+    const res = ids.map((id, index) => {
+      return { id: id, posterUrl: posterUrls[index] };
+    });
     dispatch(addSearchResult(res));
     setSearchedText(searchText.current.value);
   };
@@ -58,13 +62,13 @@ const GptSearchBar = () => {
           <h1 className="text-5xl font-bold">{lang[langKey].searchTitle}</h1>
           <h2 className="text-xl">{lang[langKey].searchSubTitle}</h2>
         </div>
-        <div className="p-2 sm:p-0 w-full">
+        <div className="p-2 sm:p-0 w-full flex flex-col justify-center">
           <form
             className="flex justify-center items-center gap-2"
             onSubmit={(e) => e.preventDefault()}
           >
             <img
-              className="absolute left-1/25 sm:left-1/54 md:left-1/64 lg:left-1/72 xl:left-1/42 w-6 md:w-8 "
+              className="absolute left-1/25 md:left-1/24 lg:left-1/19 xl:left-1/16 w-6 md:w-8 "
               src={search}
               alt=""
             />
@@ -80,13 +84,14 @@ const GptSearchBar = () => {
             >
               {lang[langKey].search}
             </button>
-            <button
-              className="bg-red-500 text-white px-4 py-5 rounded-md"
-              onClick={handleGptSearchClick}
-            >
-              {lang[langKey].gptsearch}
-            </button>
           </form>
+          <br />
+          <button
+            className="bg-red-500 text-white w-auto mx-auto px-4 py-3 rounded-md"
+            onClick={handleGptSearchClick}
+          >
+            {lang[langKey].gptsearch}
+          </button>
         </div>
       </div>
       <div className="font-bold text-xl ml-4 md:ml-6">{searchedText}</div>

@@ -1,7 +1,7 @@
 const lang = {
   en: {
     search: "Search",
-    gptsearch: "GPT Search",
+    gptsearch: "Not satisfied with result! Try GPT Search",
     signIn: "Sign In",
     signUp: "Sign Up",
     signOut: "Sign Out",
@@ -30,7 +30,7 @@ const lang = {
   },
   hi: {
     search: "खोज",
-    gptsearch: "GPT खोज",
+    gptsearch: "परिणाम से संतुष्ट नहीं हैं! GPT सर्च आज़माएँ",
     signIn: "साइन इन",
     signUp: "साइन अप",
     signOut: "साइन आउट",
@@ -59,7 +59,7 @@ const lang = {
   },
   es: {
     search: "Buscar",
-    gptsearch: "Búsqueda GPT",
+    gptsearch: "¡No estás satisfecho con el resultado! Prueba la búsqueda GPT",
     signIn: "Iniciar sesión",
     signUp: "Registrarse",
     signOut: "Cerrar sesión",
@@ -88,7 +88,7 @@ const lang = {
   },
   fr: {
     search: "Rechercher",
-    gptsearch: "Recherche GPT",
+    gptsearch: "Résultat insatisfait ? Essayez GPT Search",
     signIn: "Se connecter",
     signUp: "S’inscrire",
     signOut: "Se déconnecter",
@@ -117,7 +117,7 @@ const lang = {
   },
   de: {
     search: "Suchen",
-    gptsearch: "GPT-Suche",
+    gptsearch: "Nicht zufrieden mit dem Ergebnis? Versuchen Sie die GPT-Suche",
     signIn: "Anmelden",
     signUp: "Registrieren",
     signOut: "Abmelden",
@@ -146,7 +146,7 @@ const lang = {
   },
   ja: {
     search: "検索",
-    gptsearch: "GPT検索",
+    gptsearch: "結果に満足できない！GPT検索をお試しください ",
     signIn: "サインイン",
     signUp: "サインアップ",
     signOut: "サインアウト",
