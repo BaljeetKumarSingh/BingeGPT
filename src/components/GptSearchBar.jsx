@@ -4,6 +4,8 @@ import lang from "../utils/lang";
 import { useRef, useState } from "react";
 import openAi from "../utils/openAi";
 import { addSearchResult } from "../utils/moviesSlice";
+import { API_ACTION } from "../utils/constants";
+
 const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
@@ -35,6 +37,20 @@ const GptSearchBar = () => {
     dispatch(addSearchResult(res));
     setSearchedText(searchText.current.value);
   };
+  const handleNormalSearchClick = async () => {
+    const movieData = await fetch(
+      `https://api.trakt.tv/search/movie?query=${searchText.current.value}`,
+      API_ACTION
+    );
+    const json = await movieData.json();
+    const res = json.map((movie) =>
+      movie?.movie?.ids?.imdb
+        ? movie?.movie?.ids?.imdb.toString()
+        : movie?.movie?.ids?.tmdb.toString()
+    );
+    dispatch(addSearchResult(res));
+    setSearchedText(searchText.current.value);
+  };
   return (
     <div>
       <div className="flex justify-center flex-col items-center gap-4 bg-blend-screen bg-gradient-to-b from-purple-500 mb-10">
@@ -47,7 +63,11 @@ const GptSearchBar = () => {
             className="flex justify-center items-center gap-2"
             onSubmit={(e) => e.preventDefault()}
           >
-            <img className="absolute left-1/25 md:left-1/24 lg:left-1/19 xl:left-1/16 w-6 md:w-8 " src={search} alt="" />
+            <img
+              className="absolute left-1/25 sm:left-1/54 md:left-1/64 lg:left-1/72 xl:left-1/42 w-6 md:w-8 "
+              src={search}
+              alt=""
+            />
             <input
               ref={searchText}
               className="bg-white/30 py-4.5 rounded-md px-12 w-10/12 text-lg  text-white sm:font-bold"
@@ -56,9 +76,15 @@ const GptSearchBar = () => {
             />
             <button
               className="bg-red-500 text-white px-4 py-5 rounded-md"
-              onClick={handleGptSearchClick}
+              onClick={handleNormalSearchClick}
             >
               {lang[langKey].search}
+            </button>
+            <button
+              className="bg-red-500 text-white px-4 py-5 rounded-md"
+              onClick={handleGptSearchClick}
+            >
+              {lang[langKey].gptsearch}
             </button>
           </form>
         </div>
