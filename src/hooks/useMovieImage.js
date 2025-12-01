@@ -5,7 +5,7 @@ const useMovieImage = (id) => {
   const [imageData, setImageData] = useState(null);
   const getMovieImages = async (id) => {
     const data = await fetch(
-      `https://webservice.fanart.tv/v3/movies/${id}?api_key=${FANART_API_KEY}`
+      `https://corsproxy.io/https://webservice.fanart.tv/v3/movies/${id}?api_key=${FANART_API_KEY}`
     );
     const json = await data.json();
     setImageData(json);
